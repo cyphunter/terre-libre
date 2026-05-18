@@ -1,0 +1,53 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "terre-libre",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-05-05",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  // ─── Pas de D1 ───────────────────────────────────────────────────────
+  // Terre Libre est un site vitrine (catalogue céramiques, cours, expositions).
+  // Contenu géré via src/lib/site-config.ts + src/data/*.ts.
+  // Ne pas ajouter de binding DB sauf passage à la V2 avec back-office.
+
+  // ─── R2 (object storage médias) ──────────────────────────────────────
+  // À créer avant deploy :
+  //   wrangler r2 bucket create terre-libre-media
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "terre-libre-media"
+    }
+  ],
+
+  // ─── KV (cache court / config runtime / cache OpenNext) ──────────────
+  // Créer avant deploy :
+  //   wrangler kv namespace create terre-libre-kv
+  // → coller l'id retourné ici
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "TODO_REPLACE_WITH_REAL_ID"
+    }
+  ],
+
+  // ─── Variables d'environnement publiques ─────────────────────────────
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://terre-libre.com",
+    "SITE_ID": "terre-libre"
+  }
+
+  // ─── Secrets (NE PAS METTRE EN CLAIR ICI) ────────────────────────────
+  // wrangler secret put RESEND_API_KEY
+  // wrangler secret put CONTACT_RECIPIENT_EMAIL  (destinataire formulaire)
+}
