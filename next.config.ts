@@ -66,9 +66,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Désactivé tant que wrangler.jsonc n'a pas de vrai KV id (TODO_REPLACE_WITH_REAL_ID).
-// Avec des bindings vides, wrangler boucle et explose la RAM en quelques secondes.
-// Réactiver en remplaçant `void` par un appel après avoir créé le KV namespace.
+// Désactivé : site 100 % static, aucun binding mutable nécessaire en dev local.
+// Si un jour on ajoute un binding (KV/D1/...), remplacer `void` par un appel.
 void initOpenNextCloudflareForDev;
 
 export default nextConfig;

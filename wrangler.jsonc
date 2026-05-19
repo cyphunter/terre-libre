@@ -30,16 +30,11 @@
     }
   ],
 
-  // ─── KV (cache court / config runtime / cache OpenNext) ──────────────
-  // Créer avant deploy :
+  // ─── Pas de KV ───────────────────────────────────────────────────────
+  // Site 100 % static (toutes pages prerendered), pas besoin de cache ISR
+  // persistant. Si besoin d'ajouter un cache runtime plus tard :
   //   wrangler kv namespace create terre-libre-kv
-  // → coller l'id retourné ici
-  "kv_namespaces": [
-    {
-      "binding": "KV",
-      "id": "TODO_REPLACE_WITH_REAL_ID"
-    }
-  ],
+  // puis ajouter le bloc "kv_namespaces" avec l'id retourné.
 
   // ─── Variables d'environnement publiques ─────────────────────────────
   "vars": {

@@ -12,7 +12,7 @@
 - **SITE_ID** : `terre-libre` (variable Cloudflare seulement — **pas de DB**)
 - **D1** : **AUCUNE** — showcase pur, contenu dans `site-config.ts` + `data/*.ts`
 - **R2 bucket** : `terre-libre-media`
-- **KV namespace** : `terre-libre-kv` (cache OpenNext léger)
+- **KV** : **AUCUN** — site 100 % static, aucun cache runtime nécessaire
 - **Email expéditeur** : `contact@terre-libre.com` (Resend)
 - **Localisation** : Ploemel (56400), Bretagne sud
 - **Réseaux** : Instagram `@terrelibre_ploemel`, Facebook `Terre-Libre-Vannes`

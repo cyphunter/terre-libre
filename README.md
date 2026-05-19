@@ -12,8 +12,6 @@ npm install
 
 # 2. Créer les ressources Cloudflare (une fois)
 wrangler r2 bucket create terre-libre-media
-wrangler kv namespace create terre-libre-kv
-# → coller l'id KV retourné dans wrangler.jsonc
 
 # 3. Lancer le dev
 npm run dev          # http://localhost:3000
@@ -31,7 +29,6 @@ npm run deploy
 - **Next.js 16** App Router + React 19 + TypeScript strict
 - **Cloudflare Workers** via `@opennextjs/cloudflare`
 - **R2** pour médias (bucket `terre-libre-media`)
-- **KV** pour cache (namespace `terre-libre-kv`)
 - **Tailwind v4** (palette terre / argile / coquillage)
 - **Framer Motion** animations subtiles (`ScrollReveal`, `ken-burns`)
 - **Resend** + React Email (formulaire contact)

@@ -91,8 +91,7 @@
 ## Cloudflare resources
 
 - [ ] R2 bucket `terre-libre-media` créé
-- [ ] KV namespace `terre-libre-kv` créé + id collé dans `wrangler.jsonc`
-- [ ] Pas de binding D1 dans `wrangler.jsonc` (showcase pur — confirmé)
+- [ ] Pas de binding D1 ni KV dans `wrangler.jsonc` (showcase pur — confirmé)
 - [ ] `observability.enabled = true` dans `wrangler.jsonc`
 
 ## Responsive & cross-browser
